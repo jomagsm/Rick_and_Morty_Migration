@@ -1,13 +1,18 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_svg/svg.dart';
+// import 'package:rick_and_morty_null_safety/generated/l10n.dart';
+// import 'package:rick_and_morty_null_safety/resources/svg_icons.dart';
+// import 'package:rick_and_morty_null_safety/theme/color_theme.dart';
+// import 'package:rick_and_morty_null_safety/theme/text_theme.dart';
 
 // class SearchTextField extends StatelessWidget {
-//   // final Function onChangedFunction;
-//   final String title;
-//   SearchTextField(this.title);
-//   final TextEditingController _controller = TextEditingController();
-//   String findValue;
+// //   // final Function onChangedFunction;
+//   final String? title;
+//   SearchTextField({Key? key, required this.title}) : super(key: key);
+
+//   TextEditingController ? _controller = TextEditingController();
+//   String ? findValue;
 
 //   @override
 //   Widget build(BuildContext context) {
