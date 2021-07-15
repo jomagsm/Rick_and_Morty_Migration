@@ -1,7 +1,7 @@
 part of 'character_bloc.dart';
 
 @freezed
-abstract class CharacterProfileState with _$CharacterProfileState {
+ class CharacterProfileState with _$CharacterProfileState {
   const factory CharacterProfileState.data({
     /// Параметры
     required final Character? character,

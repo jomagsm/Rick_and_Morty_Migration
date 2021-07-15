@@ -1,7 +1,7 @@
 part of 'characters_list_bloc.dart';
 
 @freezed
- abstract class CharactersEvent with _$CharactersEvent {
+  class CharactersEvent with _$CharactersEvent {
   /// Событие инициализации
   const factory CharactersEvent.initial() = _InitialCharactersEvent;
 

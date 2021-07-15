@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_null_safety/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty_null_safety/components/app_bar/total_locations.dart';
 import 'package:rick_and_morty_null_safety/components/circular_progress.dart';
+import 'package:rick_and_morty_null_safety/components/navigator_animated.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/location_model.dart';
 import 'package:rick_and_morty_null_safety/generated/l10n.dart';
+import 'package:rick_and_morty_null_safety/screens/location/location_screen.dart';
 import 'package:rick_and_morty_null_safety/theme/color_theme.dart';
 import 'package:rick_and_morty_null_safety/theme/text_theme.dart';
 
@@ -42,11 +45,11 @@ class LocationList extends StatelessWidget {
                       itemBuilder: (_, index) {
                         return InkWell(
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     SlideRightRoute(
-                            //         page: LocationDetail(
-                            //             id: _data.locationsList[index].id)));
+                            Navigator.push(
+                                context,
+                                SlideRightRoute(
+                                    page: LocationDetail(
+                                        id: _data.locationsList![index].id)));
                           },
                           child: Column(
                             children: [

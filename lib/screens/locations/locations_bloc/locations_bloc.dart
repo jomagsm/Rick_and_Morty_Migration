@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty_null_safety/data/repository/repository.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/locations_response/locations_response_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/location_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/locations_response_model.dart';
 
 part 'locations_state.dart';
 part 'locations_event.dart';
@@ -10,7 +11,7 @@ part 'locations_bloc.freezed.dart';
 class LocationsBloc extends Bloc<LocationsEvent, LocationsState> {
   final _repository = Repository();
   List<Location>? locationsList;
-  LocationResponse? locationresponse;
+  LocationsResponse? locationresponse;
   LocationsBloc() : super(LocationsState.initial());
 
   @override

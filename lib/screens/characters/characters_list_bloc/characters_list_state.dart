@@ -1,7 +1,7 @@
 part of 'characters_list_bloc.dart';
 
 @freezed
-abstract class CharactersState with _$CharactersState {
+ class CharactersState with _$CharactersState {
   /// Состояние с данными
   const factory CharactersState.data({
     /// Параметры

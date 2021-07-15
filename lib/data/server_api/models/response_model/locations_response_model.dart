@@ -8,12 +8,12 @@ import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/lo
 
 
 
-LocationResponse locationResponseFromJson(String str) => LocationResponse.fromJson(json.decode(str));
+LocationsResponse locationsResponseFromJson(String str) => LocationsResponse.fromJson(json.decode(str));
 
-String locationResponseToJson(LocationResponse data) => json.encode(data.toJson());
+String locationsResponseToJson(LocationsResponse data) => json.encode(data.toJson());
 
-class LocationResponse {
-    LocationResponse({
+class LocationsResponse {
+    LocationsResponse({
         this.totalRecords,
         this.succeeded,
         this.message,
@@ -27,7 +27,7 @@ class LocationResponse {
     dynamic error;
     List<Location>? data;
 
-    factory LocationResponse.fromJson(Map<String, dynamic> json) => LocationResponse(
+    factory LocationsResponse.fromJson(Map<String, dynamic> json) => LocationsResponse(
         totalRecords: json["totalRecords"],
         succeeded: json["succeeded"],
         message: json["message"],
