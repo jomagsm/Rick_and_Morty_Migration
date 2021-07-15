@@ -41,5 +41,16 @@ class EpisodeResponse {
         "error": error,
         "data": List<dynamic>.from(data!.map((x) => x.toJson())),
     };
+
+    getSeasonEpisode(int? season){
+      List<Episode> episodeList = [];
+      for(var episode in this.data!){
+        if(episode.season == season){
+          episodeList.add(episode);
+        }
+      }
+      print(episodeList);
+      return episodeList;
+    }
 }
 
