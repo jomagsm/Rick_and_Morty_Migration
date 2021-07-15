@@ -46,7 +46,7 @@ class _TotalCharactersContainerState extends State<TotalCharactersContainer> {
             child: Container(
               margin: EdgeInsets.only(right: 20),
               child: SvgPicture.asset(
-                  smallCard ? SvgIcons.largeIcons : SvgIcons.smallIcons),
+                  smallCard ? SvgIcons.smallIcons : SvgIcons.largeIcons),
             ),
           ),
         ],
