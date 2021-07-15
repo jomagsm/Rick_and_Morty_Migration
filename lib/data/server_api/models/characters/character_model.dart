@@ -27,7 +27,7 @@ class Character {
   String? id;
   String? firstName;
   String? lastName;
-  String ?fullName;
+  String? fullName;
   int? status;
   String? about;
   int? gender;

@@ -32,7 +32,7 @@ class Episode {
   final String? plot;
   final DateTime? premiere;
   final String? imageName;
-  final dynamic? characters;
+  final dynamic characters;
 
   factory Episode.fromJson(Map<String, dynamic> json) => Episode(
         id: json["id"] == null ? null : json["id"],

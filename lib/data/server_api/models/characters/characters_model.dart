@@ -20,8 +20,8 @@ class CharactersModel {
 
   int? totalRecords;
   bool? succeeded;
-  dynamic? message;
-  dynamic? error;
+  dynamic message;
+  dynamic error;
   List<Character>? data;
 
   factory CharactersModel.fromJson(Map<String, dynamic> json) =>
