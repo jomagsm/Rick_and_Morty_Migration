@@ -1,17 +1,19 @@
 // To parse this JSON data, do
 //
-//     final episodeResponse = episodeResponseFromJson(jsonString);
+//     final locationResponse = locationResponseFromJson(jsonString);
 
 import 'dart:convert';
 
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/episode_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/location_model.dart';
 
-EpisodeResponse episodeResponseFromJson(String str) => EpisodeResponse.fromJson(json.decode(str));
 
-String episodeResponseToJson(EpisodeResponse data) => json.encode(data.toJson());
 
-class EpisodeResponse {
-    EpisodeResponse({
+LocationResponse locationResponseFromJson(String str) => LocationResponse.fromJson(json.decode(str));
+
+String locationResponseToJson(LocationResponse data) => json.encode(data.toJson());
+
+class LocationResponse {
+    LocationResponse({
         this.totalRecords,
         this.succeeded,
         this.message,
@@ -23,14 +25,14 @@ class EpisodeResponse {
     bool? succeeded;
     dynamic message;
     dynamic error;
-    List<Episode>? data;
+    List<Location>? data;
 
-    factory EpisodeResponse.fromJson(Map<String, dynamic> json) => EpisodeResponse(
+    factory LocationResponse.fromJson(Map<String, dynamic> json) => LocationResponse(
         totalRecords: json["totalRecords"],
         succeeded: json["succeeded"],
         message: json["message"],
         error: json["error"],
-        data: List<Episode>.from(json["data"].map((x) => Episode.fromJson(x))),
+        data: List<Location>.from(json["data"].map((x) => Location.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
@@ -41,4 +43,3 @@ class EpisodeResponse {
         "data": List<dynamic>.from(data!.map((x) => x.toJson())),
     };
 }
-

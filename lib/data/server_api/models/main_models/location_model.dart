@@ -1,46 +1,4 @@
-// To parse this JSON data, do
-//
-//     final locationResponse = locationResponseFromJson(jsonString);
-
-import 'dart:convert';
-
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/character_model.dart';
-
-LocationResponse locationResponseFromJson(String str) => LocationResponse.fromJson(json.decode(str));
-
-String locationResponseToJson(LocationResponse data) => json.encode(data.toJson());
-
-class LocationResponse {
-    LocationResponse({
-        this.totalRecords,
-        this.succeeded,
-        this.message,
-        this.error,
-        this.data,
-    });
-
-    int? totalRecords;
-    bool? succeeded;
-    dynamic message;
-    dynamic error;
-    List<Location>? data;
-
-    factory LocationResponse.fromJson(Map<String, dynamic> json) => LocationResponse(
-        totalRecords: json["totalRecords"],
-        succeeded: json["succeeded"],
-        message: json["message"],
-        error: json["error"],
-        data: List<Location>.from(json["data"].map((x) => Location.fromJson(x))),
-    );
-
-    Map<String, dynamic> toJson() => {
-        "totalRecords": totalRecords,
-        "succeeded": succeeded,
-        "message": message,
-        "error": error,
-        "data": List<dynamic>.from(data!.map((x) => x.toJson())),
-    };
-}
+import 'character_model.dart';
 
 class Location {
     Location({

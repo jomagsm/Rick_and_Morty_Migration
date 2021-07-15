@@ -1,7 +1,7 @@
 
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/character_model.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/characters_model.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/locations_response/locations_response_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/characters_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/locations_response_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/server_api.dart';
 
 

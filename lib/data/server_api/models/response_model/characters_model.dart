@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'character_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
+
 
 
 CharactersModel charactersModelFromJson(String str) =>

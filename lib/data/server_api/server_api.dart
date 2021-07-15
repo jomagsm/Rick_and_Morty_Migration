@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 
 import 'dio_settings.dart';
-import 'models/character/character_response_model.dart';
-import 'models/characters/character_model.dart';
-import 'models/characters/characters_model.dart';
-import 'models/locations_response/locations_response_model.dart';
+import 'models/main_models/character_model.dart';
+import 'models/response_model/character_response_model.dart';
+import 'models/response_model/characters_model.dart';
+import 'models/response_model/locations_response_model.dart';
 
 class ServerApi {
   static ServerApi _instance = new ServerApi.internal();

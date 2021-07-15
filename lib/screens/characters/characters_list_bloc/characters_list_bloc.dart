@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty_null_safety/data/repository/repository.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/character_model.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/characters_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/characters_model.dart';
 
 part 'characters_list_state.dart';
 part 'characters_list_event.dart';

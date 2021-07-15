@@ -4,7 +4,7 @@ import 'package:rick_and_morty_null_safety/components/app_bar/search_text_field.
 import 'package:rick_and_morty_null_safety/components/app_bar/total_characters.dart';
 import 'package:rick_and_morty_null_safety/components/circular_progress.dart';
 import 'package:rick_and_morty_null_safety/components/navigator_animated.dart';
-import 'package:rick_and_morty_null_safety/data/server_api/models/characters/character_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
 import 'package:rick_and_morty_null_safety/generated/l10n.dart';
 import 'package:rick_and_morty_null_safety/screens/character/character_screen.dart';
 import 'package:rick_and_morty_null_safety/theme/color_theme.dart';
