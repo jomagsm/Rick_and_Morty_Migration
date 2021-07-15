@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty_null_safety/screens/characters/screen.dart';
+import 'package:rick_and_morty_null_safety/screens/locations/locations_screen.dart';
 
 part 'main_screen_state.dart';
 part 'main_screen_event.dart';
@@ -13,7 +14,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   MainScreenBloc() : super(MainScreenState.initial());
   List<Widget> tabs = [
     CharactersScreen(),
-    // LocationList(),
+    LocationList(),
     // EpisodesList(),
     // SettingsScreen()
   ];

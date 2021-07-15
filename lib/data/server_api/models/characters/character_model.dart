@@ -53,6 +53,7 @@ class Character {
           ? null
           : distributePlaceOfBirthClass(json),
       episodes:
+          json['episodes'] == null ? null:
           List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))));
 
   Map<String, dynamic> toJson() => {

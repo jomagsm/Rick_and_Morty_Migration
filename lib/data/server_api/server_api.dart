@@ -4,6 +4,7 @@ import 'dio_settings.dart';
 import 'models/character/character_response_model.dart';
 import 'models/characters/character_model.dart';
 import 'models/characters/characters_model.dart';
+import 'models/locations_response/locations_response_model.dart';
 
 class ServerApi {
   static ServerApi _instance = new ServerApi.internal();
@@ -35,6 +36,16 @@ class ServerApi {
       Response<String> response = await _dio.get("/api/Characters/GetById",
           queryParameters: {"id": id});
       return characterResponseModelFromJson(response.toString()).data;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<LocationResponse?> getLocations() async {
+    try {
+      Response<String> response = await _dio.get("/api/Locations/GetAll",
+          queryParameters: {"PageNumber": 1, "PageSize": 200});
+          return locationResponseFromJson(response.toString());
     } catch (e) {
       throw e;
     }
