@@ -1,17 +1,14 @@
-
 import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/characters_model.dart';
+import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/episodes_response_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/location_response_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/models/response_model/locations_response_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/server_api.dart';
 
-
 class Repository {
   final _serviceApi = ServerApi();
   // Получение списка персонажей
-  
-  
-  
+
   Future<CharactersModel> getCharacters() async {
     try {
       final response = await _serviceApi.getCharacters();
@@ -21,7 +18,6 @@ class Repository {
     }
   }
 
- 
   Future<Character?> getCharacter(String? id) async {
     final response = await _serviceApi.getCharacter(id);
     return response;
@@ -36,9 +32,18 @@ class Repository {
     }
   }
 
-    Future<LocationResponse?> getLocationById(String? id) async {
+  Future<LocationResponse?> getLocationById(String? id) async {
     try {
       final response = await _serviceApi.getLocationById(id);
+      return response;
+    } catch (e) {
+      throw (e);
+    }
+  }
+
+  Future<EpisodeResponse?> getEpisodes() async {
+    try {
+      final response = await _serviceApi.getEpisodes();
       return response;
     } catch (e) {
       throw (e);

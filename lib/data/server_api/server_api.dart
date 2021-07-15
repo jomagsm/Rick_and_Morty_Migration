@@ -4,6 +4,7 @@ import 'dio_settings.dart';
 import 'models/main_models/character_model.dart';
 import 'models/response_model/character_response_model.dart';
 import 'models/response_model/characters_model.dart';
+import 'models/response_model/episodes_response_model.dart';
 import 'models/response_model/location_response_model.dart';
 import 'models/response_model/locations_response_model.dart';
 
@@ -58,6 +59,16 @@ Future<LocationResponse?> getLocationById(String? id) async {
       Response<String> response = await _dio.get("/api/Locations/GetById",
           queryParameters: {"id": id});
           return locationResponseFromJson(response.toString());
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<EpisodeResponse?> getEpisodes() async {
+    try {
+      Response<String> response = await _dio.get("/api/Episodes/GetAll",
+           queryParameters: {"PageNumber": 1, "PageSize": 200});
+          return episodeResponseFromJson(response.toString());
     } catch (e) {
       throw e;
     }
