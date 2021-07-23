@@ -13,8 +13,8 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
   EpisodesBloc() : super(EpisodesState.initial());
   int? seasonId = 1;
   List<int>? season = [1, 2, 3, 4];
-  List<Episode>? seasonEpisodes;
-  List<Episode>? allEpisodeList;
+  late List<Episode> seasonEpisodes;
+  late List<Episode> allEpisodeList;
   EpisodeResponse? allEpisode;
 
   @override
@@ -30,8 +30,8 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
     yield EpisodesState.loading();
     try {
       allEpisode = await _repository.getEpisodes();
-      allEpisodeList = allEpisode!.data;
-      seasonEpisodes = allEpisode?.getSeasonEpisode(seasonId);
+      allEpisodeList = allEpisode!.data!;
+      seasonEpisodes = allEpisode!.getSeasonEpisode(seasonId);
       yield EpisodesState.data(season: season, episodes: seasonEpisodes);
     } catch (e) {
       print(e);
@@ -42,10 +42,8 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
       _SelectEpisodesEvent event) async* {
     yield EpisodesState.loading();
     seasonId = event.seasonId;
-    print("SEASON ID: $seasonId");
-    
-    seasonEpisodes = allEpisode?.getSeasonEpisode(seasonId);
-    print(seasonEpisodes);
-    yield EpisodesState.data(season: season, episodes: seasonEpisodes!);
+    allEpisode = await _repository.getEpisodes();
+    seasonEpisodes = allEpisode!.getSeasonEpisode(seasonId);
+    yield EpisodesState.data(season: season, episodes: seasonEpisodes);
   }
 }

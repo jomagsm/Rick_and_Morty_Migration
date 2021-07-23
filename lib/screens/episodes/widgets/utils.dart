@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'episodes_list.dart';
+import '../episode_screen.dart';
+
 
 getTabs(List tabsName, String title) {
   List<Widget> tabs = [];

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_null_safety/components/app_bar/arrow_back_app_bar_transparent.dart';
 import 'package:rick_and_morty_null_safety/components/circular_progress.dart';
+import 'package:rick_and_morty_null_safety/components/navigator_animated.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/character_model.dart';
 import 'package:rick_and_morty_null_safety/data/server_api/models/main_models/episode_model.dart';
 import 'package:rick_and_morty_null_safety/generated/l10n.dart';
 import 'package:rick_and_morty_null_safety/screens/character/widget/utils.dart';
 import 'package:rick_and_morty_null_safety/screens/characters/widgets/utils.dart';
+import 'package:rick_and_morty_null_safety/screens/location/location_screen.dart';
 import 'package:rick_and_morty_null_safety/theme/color_theme.dart';
 import 'package:rick_and_morty_null_safety/theme/text_theme.dart';
 
@@ -132,8 +134,8 @@ class _CharacterProfileContent extends StatelessWidget {
                     S.of(context).place, "${S.of(context).unknow}", () {})
                 : getRowTitleContent(
                     S.of(context).place, "${character!.placeOfBirth!.name}", () {
-                    // Navigator.push(context,
-                    //     SlideRightRoute(page: LocationDetail(id: location.id)));
+                    Navigator.push(context,
+                        SlideRightRoute(page: LocationDetail(id: character!.placeOfBirthId)));
                   }),
             const SizedBox(
               height: 36,
@@ -192,9 +194,6 @@ class _EpisodeListView extends StatelessWidget {
                         image: NetworkImage(episodes![index].imageName!),
                         fit: BoxFit.cover),
                   )),
-              // child:
-              //     Image.network(episodes[index].imageName, fit: BoxFit.cover),
-              // ),
               Container(
                 margin: EdgeInsets.only(left: 16, right: 9),
                 width: 213,

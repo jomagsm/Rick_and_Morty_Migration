@@ -49,7 +49,7 @@ class EpisodeResponse {
           episodeList.add(episode);
         }
       }
-      print(episodeList);
+      episodeList.sort((a,b)=> a.series!.compareTo(b.series!));
       return episodeList;
     }
 }
